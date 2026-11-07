@@ -1,0 +1,42 @@
+<input type="text" id="numero" placeholder="Digite números">
+
+<button onclick="verificar()">Verificar</button>
+
+<div id="resultado"></div>
+
+<style>
+    .girar {
+        display: inline-block;
+        animation: rotacao 1s linear;
+    }
+
+    @keyframes rotacao {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<script>
+function verificar() {
+
+    let numero = document.getElementById("numero").value;
+
+    let resultado = "";
+
+    for (let i = 0; i < numero.length; i++) {
+
+        if (numero[i] === "5") {
+            resultado += `<span class="girar">5</span>`;
+        } else {
+            resultado += numero[i];
+        }
+    }
+
+    document.getElementById("resultado").innerHTML = resultado;
+}
+</script>
